@@ -7,6 +7,14 @@ class Board
     end
   end
 
+  def self.load(file)
+    File.open(file, "r") {|f| return self.new(eval(f.read)) }
+  end
+
+  def save(file)
+    File.open(file, "w") {|f| f.write(@board) }
+  end
+
   def twod(x,y)
     @board[y*9+x]
   end
@@ -96,20 +104,7 @@ class Board
   end
 end
 
-board = Board.new([
-  7, 4, 0,  0, 1, 3,  5, 0, 0,
-  0, 0, 0,  6, 0, 0,  0, 0, 8,
-  3, 6, 0,  7, 5, 8,  2, 0, 0,
-
-  0, 0, 0,  4, 2, 0,  0, 8, 5,
-  0, 0, 0,  3, 0, 9,  0, 0, 0,
-  4, 8, 0,  0, 6, 5,  0, 0, 0,
-
-  0, 0, 5,  8, 4, 1,  0, 7, 2,
-  2, 0, 0,  0, 0, 6,  0, 0, 0,
-  0, 0, 1,  5, 7, 0,  0, 6, 9,
-])
-
+board = Board.load("board.txt")
 while true
   p board
   break if board.solved?
