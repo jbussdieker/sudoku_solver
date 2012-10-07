@@ -54,6 +54,7 @@ class Board
               self[cx,cy,cz] = p.first
             else
               # Check if it's not possible elsewhere in this cell
+              # Medium skill move
               p.each do |v|
                 elsewhere = false
                 for px in 0..2
