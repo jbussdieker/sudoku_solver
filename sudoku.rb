@@ -41,16 +41,30 @@ class Board
   end
 
   def solve_one
-    for cy in 0..2
-      for cx in 0..2
-        for cz in 0..8
+    for cz in 0..8
+      for cy in 0..2
+        for cx in 0..2
           p = possible(cx,cy,cz)
           # Not already solved
-          if p
+          if p.length != 0
+            #puts "(#{cx}, #{cy}, #{cz}) #{p.inspect}"
+
             # One solution
             if p.length == 1
-              #puts "(#{cx}, #{cy}, #{cz}) #{p.inspect}"
               self[cx,cy,cz] = p.first
+            else
+              # Check if it's not possible elsewhere in this cell
+              p.each do |v|
+                elsewhere = false
+                for px in 0..2
+                  for py in 0..2
+                    if px != cx or py != cy
+                      elsewhere = true if possible(px, py, cz).include? v
+                    end
+                  end
+                end
+                self[cx,cy,cz] = v if elsewhere == false
+              end
             end
           end
         end
@@ -60,8 +74,8 @@ class Board
 
   def possible(x,y,z)
     if self[x,y,z] != 0
-      #self[x,y,z]
-      nil
+      # Solved nothing possible
+      []
     else
       p = [1,2,3,4,5,6,7,8,9]
       # Remove this cells numbers
@@ -104,10 +118,10 @@ class Board
   end
 end
 
-board = Board.load("board.txt")
+board = Board.load(ARGV[0])
 while true
   p board
   break if board.solved?
   board.solve_one
-  gets
+  STDIN.gets
 end
