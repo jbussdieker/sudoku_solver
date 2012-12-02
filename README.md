@@ -1,3 +1,23 @@
+# SudokuSolver
+
+TODO: Write a gem description
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'sudoku_solver'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install sudoku_solver
+
+## Usage
+
 `````
 $ ruby sudoku.rb easy.txt
 +-------+-------+-------+
@@ -74,3 +94,11 @@ $ ruby sudoku.rb easy.txt
 | 8 3 1 | 5 7 2 | 4 6 9 |
 +-------+-------+-------+
 `````
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
