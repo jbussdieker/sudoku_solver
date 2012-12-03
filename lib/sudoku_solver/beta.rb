@@ -43,8 +43,3 @@ module Sudoku
     end
   end
 end
-
-b = Sudoku::Board.new
-q = b.quad(1)
-c = q[0,0]
-p b

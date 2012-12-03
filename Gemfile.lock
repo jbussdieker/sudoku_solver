@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    sudoku_solver (0.0.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  sudoku_solver!

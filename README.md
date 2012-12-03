@@ -19,7 +19,7 @@ Or install it yourself as:
 ## Usage
 
 `````
-$ ruby sudoku.rb easy.txt
+$ sudoku_solver easy.txt
 +-------+-------+-------+
 | 7 4 . | . 1 3 | 5 . . |
 | . . . | 6 . . | . . 8 |

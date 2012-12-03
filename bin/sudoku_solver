@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'sudoku_solver'
+
+board = SudokuSolver::Board.load(ARGV[0])
+while true
+  p board
+  break if board.solved?
+  board.solve_one
+  STDIN.gets
+end
+
+# BETA!
+#b = Sudoku::Board.new
+#q = b.quad(1)
+#c = q[0,0]
+#p b
