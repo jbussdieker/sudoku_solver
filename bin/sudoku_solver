@@ -10,7 +10,8 @@ while true
 end
 
 # BETA!
-#b = Sudoku::Board.new
+#require 'sudoku_solver/beta'
+#b = SudokuSolver::Board.new
 #q = b.quad(1)
 #c = q[0,0]
 #p b

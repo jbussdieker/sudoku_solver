@@ -1,4 +1,4 @@
-module Sudoku
+module SudokuSolver
   class Board
     def initialize(values=nil)
       @quads = Array.new(9)
@@ -10,7 +10,7 @@ module Sudoku
     end
 
     def [](x, y)
-      q = ((y / 3) * 3) + (x % 3))
+      q = (((y / 3) * 3) + (x % 3))
     end
   end
 
